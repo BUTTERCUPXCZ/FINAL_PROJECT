@@ -19,7 +19,7 @@ body{
 
 }
 .Aboutus h1{
-    color: black;
+    color:black;
     font-size: 50px;
     text-align: center;
     margin-top: 35px;
@@ -50,7 +50,7 @@ margin: 0px 25px;
 .hero-content p{
     font-size: 19px;
     margin-top: 10px;
-    color: black;
+    color: rgb(76, 76, 76);
     line-height: 1.5;
     float: right; /* Floats the content to the right */
     font-family: sans-serif;

@@ -19,7 +19,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
-          <a class="navbar-brand fs-4" href="#">E-Diary Management System</a>
+          <a class="navbar-brand fs-4" href="#">E-Diary Management</a>
           <!--Toggle button-->
           <button class="navbar-toggler shadow-none border-0" 
           type="button" 
@@ -54,7 +54,7 @@
                   <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="About">About</a>
+                  <a class="nav-link" href="Aboutus.html">About</a>
                 </li>
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="Contact">Contact</a>
@@ -84,7 +84,7 @@
         
         <!--Login Form-->
         <div class= "form login_form">
-        <form action="#">
+        <form action="index.php">
           <h2>Login</h2>
             
            <div class= "input_box">
