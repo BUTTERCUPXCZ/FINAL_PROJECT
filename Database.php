@@ -2,14 +2,13 @@
 $serverName = "localhost:3306";
 $userName = "root";
 $password = "";
-$dbname = "user";
+$dbname = "diary";
 
-$con = new mysqli($serverName, $userName, $password, $dbname);
+$con = mysqli_connect($serverName, $userName, $password, $dbname);
 
-if(mysqli_connect_errno()){
-    echo "Connection Error";
-    exit();
+if($con){
+    die(mysqli_error($con));
 } 
-$con->close();
+
 
 ?>

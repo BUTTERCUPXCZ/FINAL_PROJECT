@@ -1,0 +1,68 @@
+
+body{
+   
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media(max-width:991px){
+    .sidebar{
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+
+}
+.Aboutus{
+   
+    overflow: hidden;
+
+}
+.Aboutus h1{
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 35px;
+    font-family: sans-serif;
+
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 50px auto;
+    clear: both;
+}
+.hero-content{
+flex: 1;
+width: 50%;
+margin: 0px 25px;
+}
+.hero-content h2{
+    margin-bottom: 20px;
+    color: black;
+    font-size: 30px;
+    font-family: sans-serif;
+   
+}
+
+.hero-content p{
+    font-size: 19px;
+    margin-top: 10px;
+    color: black;
+    line-height: 1.5;
+    float: right; /* Floats the content to the right */
+    font-family: sans-serif;
+}
+.hero-image{
+    flex:1;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-left: auto;
+    
+  
+}
+
+

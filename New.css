@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+    
+
 body{
-    background: url('office.jpg') rgba(0, 0, 0, 0.3);
+    background: url('pot.jpg') rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply;
     background-position: center;
     background-size: cover;
@@ -13,27 +15,25 @@ body{
     }
 
 }
-.headings{
+.headings h1{
     color: white;
     margin-left: 100px;
-    margin-top: 250px;
+    margin-top: 180px;
+    font-size: 2rem;
+    border-right:5x solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 7s steps(1000),
+        cursor .4s step-end infinite alternate;
+
+}
+
+@keyframes typing {
+    from{ width:0 }
     
-
 }
-.get{
-    margin-top: 20px;
-    border-radius: 2px;
-    padding: 10px;
-    border: 10px;
-    background:rgb(36, 113, 228);
-    color: white;
-      
-
-}
-.get:hover{
-    background:rgb(60, 130, 235);
-}
-
 .navbar-brand{
     font-weight: bold;
 
@@ -42,8 +42,6 @@ body{
     color: grey;
 
 }
-
-
 .login{
     color: #fff;
 }
@@ -178,19 +176,7 @@ body{
 .form_container a:hover{
   text-decoration: underline;
 }
-.checkbox{
-  display: flex;
-  column-gap: 8px;
-  white-space: nowwrap;
-  font-size: 12px;
-   
-}
-.checkbox label{
- font-size: 12px;
- cursor: pointer;
- user-select: none;
- color: #0b0217;
-}
+
 .form_container .button{
        background: rgb(36, 113, 228);
        margin-top: 30px;
@@ -205,3 +191,11 @@ body{
      margin-top: 15px;
 
 }
+.offcanvas-body{
+ margin-left: 350px;
+
+}
+
+
+
+
