@@ -1,103 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-    <link rel="stylesheet" href="Calendar.css">
-    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <script src="Calendar.js" defer></script>
-    <script src="https://kit.fontawesome.com/c08e2b6902.js" crossorigin="anonymous"></script>
-
-</head>
-<body>
-
-    <input type="checkbox" id="check">
-    <label for="check">
-      <i class="fas fa-bars" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <div class="sidebar">
-      <header>Menu</header>
-      <ul>
-        <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-        <li><a href="entry.php"><i class="fas fa-edit"></i>Write Entry</a></li>
-        <li id="entries"><a href="entries.php"><i class="fas fa-archive"></i>Entries</a></li>
-        <li><a href="Calendar.php"><i class="fas fa-calendar-week">Calendar</i></a></li>
-        
-      </ul>
-  
-    </div>
-    
-<div class="wrapper">
-    
-    <header>
-    
-        <p class="current-date"></p>
-        <div class="icons">
-            <span id = "prev" class = "material-symbols-rounded">chevron_left</span>
-            <span id ="next"  class = "material-symbols-rounded">chevron_right</span>
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stay organized with our user-friendly Event Calendar"
+    />
+    <meta
+      name="keywords"
+      content="calendar, events, reminders, javascript, html, css, open source coding"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="Calendar.css" />
+    <title>Calendar with Events</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="calendar">
+          <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">March 2024</div>
+            <i class="fas fa-angle-right next"></i>
+          </div>
+          <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div class="days"></div>
+          <div class="goto-today">
+            <div class="goto">
+              <input type="text" placeholder="mm/yyyy" class="date-input" />
+              <button class="goto-btn">Go</button>
+            </div>
+            <button class="today-btn">Today</button>
+          </div>
         </div>
-    </header>
-    <div class="calendar">
-        <ul class="weeks">
-            <li>Sun</li>
-            <li>Mon</li>
-            <li>Tues</li>
-            <li>Wed</li>
-            <li>Thurs</li>
-            <li>Fri</li>
-            <li>Sat</li>
-        </ul>
-
-        <ul class="days">
-        <li class="inactive">25</li>
-        <li class="inactive">26</li>
-        <li class="inactive">27</li>
-        <li class="inactive">28</li>
-        <li class="inactive">29</li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li>11</li>
-        <li>12</li>
-        <li>13</li>
-        <li>14</li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li>21</li>
-        <li>22</li>
-        <li>23</li>
-        <li class="active">24</li>
-        <li>26</li>
-        <li>27</li>
-        <li>28</li>
-        <li>29</li>
-        <li>30</li>
-        <li>31</li>
-        <li class="inactive">1</li>
-        <li class="inactive">2</li>  
-        <li class="inactive">3</li> 
-        <li class="inactive">4</li> 
-        <li class="inactive">5</li> 
-        <li class="inactive">6</li> 
-    </ul>
+      </div>
+      <div class="right">
+        <div class="today-date">
+          <div class="event-day">fri</div>
+          <div class="event-date">1st of Marhc 2024</div>
+        </div>
+        <div class="events"></div>
+        <div class="add-event-wrapper">
+          <div class="add-event-header">
+            <div class="title">Add Event</div>
+            <i class="fas fa-times close"></i>
+          </div>
+          <div class="add-event-body">
+            <div class="add-event-input">
+              <input type="text" placeholder="Event Name" class="event-name" />
+            </div>
+            <div class="add-event-input">
+              <input
+                type="text"
+                placeholder="Event Time From"
+                class="event-time-from"
+              />
+            </div>
+            <div class="add-event-input">
+              <input
+                type="text"
+                placeholder="Event Time To"
+                class="event-time-to"
+              />
+            </div>
+          </div>
+          <div class="add-event-footer">
+            <button class="add-event-btn">Add Event</button>
+          </div>
+        </div>
+      </div>
+      <button class="add-event">
+        <i class="fas fa-plus"></i>
+      </button>
     </div>
-</div>
 
-</body>
+
+    <script src="Calendar.js"></script>
+  </body>
 </html>
