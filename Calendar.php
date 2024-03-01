@@ -91,6 +91,6 @@
     </div>
 
 
-    <script src="Calendar.js"></script>
+    <script src="calendar.js"></script>
   </body>
 </html>
