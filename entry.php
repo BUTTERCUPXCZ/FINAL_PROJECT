@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 if (isset($_POST['submit'])) {
   $entry = $_POST['entry'];
 
-  $sql = "INSERT INTO entries (journal) VALUES (?)";
+  $sql = "INSERT INTO entries (entries) VALUES (?)";
 
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $entry);
