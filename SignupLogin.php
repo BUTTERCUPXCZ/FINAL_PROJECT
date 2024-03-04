@@ -11,15 +11,15 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-  
     <link rel="stylesheet" href="New.css">
+   
 
 </head>
-<body class="vh-100 overflow-hidden">
+<body class="vh-100">
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
-          <a class="navbar-brand fs-4" href="#">E-Diary Management</a>
+          <a class="navbar-brand fs-4" href="#">E-Diary Management System</a>
           <!--Toggle button-->
           <button class="navbar-toggler shadow-none border-0" 
           type="button" 
@@ -50,14 +50,14 @@
             <!--Sidebar body-->
             <div class="offcanvas-body d-flex flex-column flex-lg-row p-4  p-lg-0">
               <ul class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3">
-                <li class="nav-item mx-2">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <li class="nav-item">
+                  <a class="nav-link active mx-2" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item mx-2">
                   <a class="nav-link" href="Aboutus.html">About</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="Contact">Contact</a>
+                  <a class="nav-link" href="Contact.html">Contact</a>
                 </li>
                
               </ul>
@@ -77,68 +77,62 @@
         </div>
       </nav>
       </div>
-     <!--Home-->
+    
+    
+      <!--Home-->
      <section class = "home">
        <div class = "form_container">
         <i class = "uil uil-times form_close"></i>
         
         <!--Login Form-->
-        <div class= "form login_form">
-        <form action="index.php">
-          <h2>Login</h2>
-            
-           <div class= "input_box">
-               <input type="email" placeholder = "Enter your email" required/>
-               <i class="uil uil-envelope-alt email"></i>
-               </div>
-               
-               <div class= "input_box">
-               <input type="password" placeholder = "Enter your password" required/>
-               <i class="uil uil-lock password"></i>
-               <i class = "uil uil-eye-slash pw_hide"></i>
-             </div>
-             
-             <div class = "option_field">
-             <span class="checkbox">
-                <input type="checkbox" id = "check">
-                <label for="check">Remember me</label>
-             </span>
-                <a href="#" class= "forgot_pw">Forgot password?</a>
-            </div>
-            
-             <button class= "button text-white">Login</button>
+   <div class="form login_form">
+  <form action = "Connect.php" method="post">
+    <h2>Login</h2>
+    <div class="input_box">
+      <input type="email" name="email-Login"  placeholder="Enter your email" required />
+      <i class="uil uil-envelope-alt email"></i>
+    </div>
+    <div class="input_box">
+      <input type="password"  name="password-Login"  placeholder="Enter your password" required />
+      <i class="uil uil-lock password"></i>
+      <i class="uil uil-eye-slash pw_hide"></i>
+    </div>
+    <button class= "button text-white" type ="submit" name="submit">Login</button>
 
-             <div class = "login_signup">Don't have an account? <a href="#" id = "signup">Sign up</a></div>
-        </form> 
-        </div>       
+   <div class = "login_signup">Don't have an account? <a href="#" id = "signup">Sign up</a></div>
+   </form>
+   </div> 
+    
         <!--Signup form-->
-        <div class ="form signup_form">
-        <form action="#">
-          <h2>Signup</h2>
-            
-           <div class= "input_box">
-               <input type="email" placeholder = "Enter your email" required/>
-               <i class="uil uil-envelope-alt email"></i>
-               </div>
-               
-               <div class= "input_box">
-               <input type="password" placeholder = "Create password" required/>
-               <i class="uil uil-lock password"></i>
-               <i class = "uil uil-eye-slash pw_hide"></i>
-             </div>
-           
-            
-             <button class= "button text-white">Signup</button>
+        <div class="form signup_form">
+  <form action="SignupLogin.php" method="post">
+    <h2>Signup</h2>
+    <div class="input_box">
+      <input type="email" name="email-signup" placeholder="Enter your email" autofocus required />
+      <i class="uil uil-envelope-alt email"></i>
+    </div>
+    <!-- Display error message below the input box -->
 
-             <div class = "login_signup">Already have an account? <a href="#" id = "Login">Login</a></div>
-        </form> 
-        </div>       
+ 
+    <div class="input_box">
+      <input type="password" name="password-signup" placeholder="Create password" required />
+      <i class="uil uil-lock password"></i>
+      <i class="uil uil-eye-slash pw_hide"></i>
+    </div>
+    <button class= "button text-white">Signup</button>
+
+    <div class = "login_signup">Already have an account? <a href="#" id = "Login">Login</a></div>
+    </form>
+       </div>  
 
        </div>
        </section>
 
      <script src ="New.js">  
      </script>
+
+     
+
 
      <main>
       <section class="headings">
@@ -150,3 +144,6 @@
 
 </body>
 </html>
+
+
+

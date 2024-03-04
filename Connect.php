@@ -2,43 +2,35 @@
 
 include("Database.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = isset($_POST['email-Login']) ? $_POST['email-Login'] : '';
+    $password = isset($_POST['password-Login']) ? $_POST['password-Login'] : '';
 
-    $email = trim($_POST['email']);
-    $password = trim($_POST['Password']);
-    $error = "";
+    $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
-    if(empty($email)){
-        $error = "Please enter your email";
-    } elseif(empty($password)){
-        $error = "Password is empty";
+    if ($row = mysqli_fetch_assoc($result)) {
+        // Password is correct
+        // Perform login actions
+
+     
+        header("Location: index.php");
+        echo "<script>alert('Login Successfully')</script>"; 
+        exit();
     } else {
-        $stmt = mysqli_prepare($con, "SELECT * FROM users WHERE email = ? AND password = ?");
-        
-        if ($stmt) {
-            mysqli_stmt_bind_param($stmt, "ss", $email, $password);
-            mysqli_stmt_execute($stmt);
-
-            $result = mysqli_stmt_get_result($stmt);
-
-            if(!$result) {
-                die("Query failed: " . mysqli_error($con));
-            }
-
-            $count = mysqli_num_rows($result);
-
-            if($count == 1){
-                header('Location: index.php');
-                exit();
-            } else {
-                $error = "Failed to login";
-            }
-
-            mysqli_stmt_close($stmt);
-        } else {
-            die("Prepared statement failed: " . mysqli_error($con));
-        }
+       
+        echo "<script>alert('Incorrect email or password'); window.location.href = 'SignupLogin.php';</script>";
+        exit();  
+      
     }
+
+    // Close the connection
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
 }
 
 ?>
+
