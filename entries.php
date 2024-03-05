@@ -21,7 +21,7 @@
       <li><a href="entry.php"><i class="fas fa-edit"></i>Write Entry</a></li>
       <li id="entries"><a href="entries.php"><i class="fas fa-archive"></i>Entries</a></li>
       <li><a href="Calendar.php"><i class="fas fa-calendar-week">Calendar</i></a></li>
-      <button>Logout</button>
+     
     </ul>
 
 

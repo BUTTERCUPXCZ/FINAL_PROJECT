@@ -99,9 +99,10 @@ if (!empty($email) && !empty($password)) {
             </div>
 
             <!--Sidebar body-->
-            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4  p-lg-0">
-              <ul class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3">
-                <li class="nav-item">
+            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+              <ul class="navbar-nav justify-content-center align-items-center  fs-5 flex-grow-1 pe-3">
+               
+              <li class="nav-item">
                   <a class="nav-link active mx-2" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item mx-2">
