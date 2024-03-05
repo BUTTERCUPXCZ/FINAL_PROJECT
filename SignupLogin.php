@@ -1,3 +1,54 @@
+<?php
+
+include("Database.php");
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $email = isset($_POST['email-signup']) ? $_POST['email-signup'] : '';
+  $password = isset($_POST['password-signup']) ? $_POST['password-signup'] : '';
+  $errors = array();
+  
+    
+      // Establish database connection if not already done in Database.php
+      $conn = mysqli_connect("localhost", "root", "", "diary");
+
+if (!empty($email) && !empty($password)) {
+
+  // Check if email already exists
+  $check_email_query = "SELECT COUNT(*) AS email_count FROM users WHERE email = ?";
+  $stmt_check = $conn->prepare($check_email_query);
+  $stmt_check->bind_param("s", $email);
+  $stmt_check->execute();
+  $result = $stmt_check->get_result(); // Get the result
+
+  $row = $result->fetch_assoc(); // Fetch the first row
+
+  if ($row['email_count'] > 0) {
+    echo "<script>alert('Email already exist')</script>";
+
+  } else {
+        $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
+          $stmt->bind_param("ss", $email, $password);
+
+          // Execute the query
+          if ($stmt->execute()) {
+            echo "<script>alert('Sign up Successfully')</script>"; 
+            header('Location:form signup_form');
+            
+            //header("Location: SignupLogin.php"); // Redirect upon success
+              
+          } else {
+              echo "Error creating account"; // Handle any errors
+          } }
+
+  $stmt_check->close(); // Close the prepared statement (check)
+  $result->close(); // Close the result set
+}
+}
+
+// ... existing code ...
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +66,7 @@
    
 
 </head>
-<body class="vh-100">
+<body class="vh-100 overflow-hidden">
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
@@ -111,7 +162,7 @@
       <input type="email" name="email-signup" placeholder="Enter your email" autofocus required />
       <i class="uil uil-envelope-alt email"></i>
     </div>
-    <!-- Display error message below the input box -->
+    
 
  
     <div class="input_box">
@@ -128,17 +179,14 @@
        </div>
        </section>
 
-     <script src ="New.js">  
-     </script>
 
+       <!--Scripts-->
+     <script src ="New.js"></script>
      
-
 
      <main>
       <section class="headings">
-             <h1>Let the Words Pour Out, Unfiltered and <br>  Unapologetic: Where Your Thoughts <br>Run Wild and Uncensored!</h1>
-             
-             
+             <h1>Let the Words Pour Out, Unfiltered and <br>  Unapologetic: Where Your Thoughts <br>Run Wild and Uncensored!</h1>             
       </section>
     </main>
 
