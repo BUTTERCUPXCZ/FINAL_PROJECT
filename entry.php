@@ -1,4 +1,4 @@
-<?php 
+<?php
 $servername = "localhost";
 $username = "james";
 $password = "james";
@@ -7,61 +7,111 @@ $dbname = "journalentries";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
+
+$message = ""; // Initialize the message variable
+
 if (isset($_POST['submit'])) {
-  $entry = $_POST['entry'];
+    $title = $_POST['title'];
+    $entry = $_POST['entry'];
 
-  $sql = "INSERT INTO entries (entries) VALUES (?)";
+    // Image handling
+    if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $image_name = $_FILES['image']['name'];
 
-  $stmt = $conn->prepare($sql);
-  $stmt->bind_param("s", $entry);
+        // Define the path where the image will be saved on the server
+        $upload_dir = "uploads/";
+        $image_path = $upload_dir . $image_name;
 
-  if ($stmt->execute()) {
-    $message = "Entry successfully added!";
-  } else {
-    $message = "Error: " . $stmt->error;
-  }
+        // Move the uploaded image to the specified directory
+        move_uploaded_file($_FILES['image']['tmp_name'], $image_path);
 
-  $stmt->close();
+        // Check if the 'entries' table has a 'VARCHAR' column for 'imagePath'
+        $sql = "INSERT INTO entries (Title, entries, imageName, imagePath) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        if (!$stmt) {
+            die("Error in statement preparation: " . $conn->error);
+        }
+
+        // Bind parameters by reference
+        $stmt->bind_param("ssss", $title, $entry, $image_name, $image_path);
+
+        if ($stmt->execute()) {
+            $message = "Entry successfully added!";
+        } else {
+            $message = "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        $message = "Error uploading image: " . $_FILES['image']['error'];
+    }
 }
- ?>
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="entry.css">
+  <link rel="stylesheet" href="index.css">
   <script src="https://kit.fontawesome.com/c08e2b6902.js" crossorigin="anonymous"></script>
-  <title>E-Diary</title>
+  <title>Write Entry</title>
 </head>
 <body>
-  <input type="checkbox" id="check">
-  <label for="check">
-    <i class="fas fa-bars" id="btn"></i>
-    <i class="fas fa-times" id="cancel"></i>
-  </label>
   <div class="sidebar">
     <header>Menu</header>
-    <ul>
-    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-      <li><a href="entry.php"><i class="fas fa-edit"></i>Write Entry</a></li>
-      <li id="entries"><a href="entries.php"><i class="fas fa-archive"></i>Entries</a></li>
-      <li><a href="Calendar.php"><i class="fas fa-calendar-week">Calendar</i></a></li>
-      
-    </ul>
-
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="entry.php"><i class="fas fa-edit"></i>Write Entry</a></li>
+        <li id=""><a href="entries.php"><i class="fas fa-archive"></i>Entries</a></li>
+        <li><a href="#"><i class="fas fa-calendar-week">Calendar</i></a></li>  
+      </ul>
   </div>
 
   <div class="container">
-   <h1>Write Entry</h1>
-   <form action="entry.php" method="post">
-  <textarea name="entry" id="entry" cols="30" rows="10" placeholder="What's on your mind?"></textarea>
-  <input type="submit" name="submit" id="submit" value="submit">
-</form>
-    <h1><?php $message ?></h1>
+    <form action="entry.php" method="post" enctype="multipart/form-data">
+      <div class="title">
+        <textarea name="title" id="title" cols="30" rows="10" placeholder="Your title"></textarea>
+      </div>
+      <div class="entry">
+        <textarea name="entry" id="entry" cols="30" rows="10" placeholder="What's on your mind?"></textarea>
+      </div>
+      <div class="submit">
+        <input type="submit" name="submit" id="submit">
+      </div>
+      <div class="image">
+        <div class="imageContainer" id="imageContainer"></div>
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image" accept="image/*" onchange="previewImage()">
+      </div>
+    </form>
   </div>
-  
 
+  <script>
+        function previewImage() {
+            var input = document.getElementById('image');
+            var container = document.getElementById('imageContainer');
+
+            // Check if a file is selected
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Set the source of the image to the uploaded file
+                    container.innerHTML = '<img src="' + e.target.result + '" alt="Uploaded Image">';
+                };
+
+                // Read the selected file as a data URL
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                container.innerHTML = ''; // Clear the container if no file is selected
+            }
+        }
+    </script>
 </body>
 </html>
