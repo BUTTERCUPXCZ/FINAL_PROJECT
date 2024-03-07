@@ -47,77 +47,88 @@ ul li:hover a{
   margin-right: 16px;
 }
 
-.entries{
-  background-color: none;
-  position: absolute;
-  min-height: 100%;
-  height: auto;
-  width: 78%;
-  top: 10px;
-  left: 270px;
-  display: flex;
-  margin: 0 auto;
-  padding: 30px;
-  row-gap: 15px;
-  flex-wrap: wrap;
-}
-.entries button{
-  background-color: rgb(21, 255, 0);
-  border-radius: 5px;
-  height: 300px;
-  width: 1200px;
-  padding: 10px;
+.container{
   position: relative;
-  margin: auto;
+  background-color: #042331;
+  border-color: black;
+  display: flex;
+  left: 20%;
+  top: 100px;
+  height: 570px;
+  width: 75%;
+  padding: 15px;
+}
+.container label{
+  position: absolute;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: beige;
+  right: 12%;
+  font-size: larger;
+}
+.title{
+  position: absolute;
+  background-color: red;
+  height: 50px;
+  width: 65%;
+  left: 3%;
+  top: 25%;
+  margin: auto 5%;
+  border-radius: 1%;
+  
+}
+#title{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  font-size: x-large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 1%;
   
 }
 .entry{
-  padding-bottom: 10px;
-  position: relative;
-  
-}
-
-
-#title{
   position: absolute;
-  resize: none;
-  height: 20%;
-  width: 70%;
-  left: 25%;
-  top: 5%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: xx-large;
-  border: none;
-  }
-
-#date{
-  position: absolute;
-  resize: none;
-  height: 5%;
-  width: 15%;
-  left: 25%;
-  top: 25%;
-  border: none;
+  background-color: blue;
+  top: 40%;
+  left: 8%;
+  height: 50%;
+  width: 85%;
 }
 #entry{
   position: absolute;
+  width: 100%;
+  height: 100%;
   resize: none;
-  width: 70%;
-  height: 40%;
-  left: 25%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: large;
-  
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 1%;
 }
-.imageDisplay{
+#submit{
+  position: absolute;
+  background-color: aqua;
+  height: 5%;
+  width: 10%;
+  bottom: 3%;
+  right: 3%;
+}
+
+.imageContainer{
   position: absolute;
   background-color: red;
-  height: 70%;
-  width: 20%;
+  height: 20%;
+  width: 13%;
   top: 10%;
-  left: 3%;
+  right: 7%;
+}
+
+#image{
+  position: absolute;
+  right: 0%;
+  top: 35%;
+  color: beige;
 }
 img{
   height: 100%;
   width: 100%;
 }
+ 
