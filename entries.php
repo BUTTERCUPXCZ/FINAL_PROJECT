@@ -50,16 +50,21 @@ if ($result->num_rows > 0) {
                 <button>
                     <textarea readonly name="title" id="title" cols="30" rows="10">' . $row["Title"] . '</textarea>
                     <textarea readonly name="date" id="date" cols="30" rows="10">' . $row["Time"] . '</textarea>
-                    <textarea readonly name="entry" id="entry" cols="30" rows="10">' . $truncatedEntry . ' </textarea>';
+                    <textarea readonly name="entry" id="entry" cols="30" rows="10">' . $truncatedEntry . ' </textarea>   
+                    ';
+                    
     
-        // Display the image if available
-        if (!empty($row["imagePath"])) {
-            echo '<div class="imageDisplay" id="imageDisplay">
-                    <img src="' . $row["imagePath"] . '" alt="' . $row["imageName"] . '">
-                  </div>';
-        }
+                    // Display the image if available
+                     if (!empty($row["imagePath"])) {
+                        echo '<div class="imageDisplay" id="imageDisplay">
+                            <img src="' . $row["imagePath"] . '" alt="' . $row["imageName"] . '">
+                             </div>
+                             ';
+                     }
     
-        echo '</button></div>';
+        echo '
+                </button>
+        </div>';
     }
     
     // Close the HTML structure

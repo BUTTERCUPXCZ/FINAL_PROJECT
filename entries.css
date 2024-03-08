@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 body{
-  background-image: url(images/pexels-faik-akmd-1025469.jpg);
+  background-image: url(images/1_NzLGpAE4V7LJCfibfgIlHA@2x.png);
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
@@ -50,6 +50,7 @@ ul li:hover a{
 .entries{
   background-color: none;
   position: absolute;
+
   min-height: 100%;
   height: auto;
   width: 78%;
@@ -62,11 +63,13 @@ ul li:hover a{
   flex-wrap: wrap;
 }
 .entries button{
-  background-color: rgb(21, 255, 0);
-  border-radius: 5px;
+  background-color: #063146;
+  border-radius: 10px;
   height: 300px;
   width: 1200px;
   padding: 10px;
+  border-color: purple;
+  border: 10px;
   position: relative;
   margin: auto;
   
@@ -77,47 +80,56 @@ ul li:hover a{
   
 }
 
-
 #title{
   position: absolute;
   resize: none;
-  height: 20%;
+  height: 15%;
   width: 70%;
   left: 25%;
   top: 5%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: xx-large;
-  border: none;
+  border-color: red;
+  border: 10px;
+  border-radius: 10px;
+  padding: 8px;
   }
 
 #date{
   position: absolute;
   resize: none;
   height: 5%;
-  width: 15%;
+  width: 13%;
   left: 25%;
-  top: 25%;
+  top: 30%;
   border: none;
+  padding: 8px;
+  border-radius: 8px;
 }
 #entry{
   position: absolute;
+  border-radius: 10px;
   resize: none;
   width: 70%;
-  height: 40%;
+  height: 30%;
   left: 25%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: large;
+  padding: 8px;
   
 }
 .imageDisplay{
   position: absolute;
-  background-color: red;
-  height: 70%;
+  border-radius: 10px;
+  height: 65%;
   width: 20%;
-  top: 10%;
+  top: 5%;
   left: 3%;
+  
 }
 img{
   height: 100%;
   width: 100%;
+  border-radius: 10px;
 }
+
