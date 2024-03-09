@@ -33,7 +33,7 @@ if (!empty($email) && !empty($password)) {
           // Execute the query
           if ($stmt->execute()) {
             echo "<script>alert('Sign up Successfully')</script>"; 
-            header('Location:form signup_form');
+            header('Location:SignupLogin.php');
             
             //header("Location: SignupLogin.php"); // Redirect upon success
               
@@ -55,8 +55,8 @@ if (!empty($email) && !empty($password)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Diary</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
@@ -66,72 +66,32 @@ if (!empty($email) && !empty($password)) {
    
 
 </head>
-<body class="vh-100 overflow-hidden">
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <div class="container">
-          <a class="navbar-brand fs-4" href="#">E-Diary Management System</a>
-          <!--Toggle button-->
-          <button class="navbar-toggler shadow-none border-0" 
-          type="button" 
-          data-bs-toggle="offcanvas" 
-          data-bs-target="#offcanvasNavbar" 
-          aria-controls="offcanvasNavbar" 
-          aria-label="Toggle navigation">
-            
-          <span class="navbar-toggler-icon"></span>
-          </button>
-
-           <!--Sidebar-->
-          <div class="sidebar offcanvas offcanvas-start" 
-          tabindex="-1" id="offcanvasNavbar" 
-          aria-labelledby="offcanvasNavbarLabel">
-
-            <!--Sidebar header-->
-            <div class="offcanvas-header text-white border-bottom">
-              <h5 class="offcanvas-title" 
-              id="offcanvasNavbarLabel">E-Diary</h5>
-              <button type="button" 
-              class="btn-close btn-close-white shadow-none" 
-              data-bs-dismiss="offcanvas" 
-              aria-label="Close"></button>
+<body ">
+  
            
-            </div>
 
-            <!--Sidebar body-->
-            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-              <ul class="navbar-nav justify-content-center align-items-center  fs-5 flex-grow-1 pe-3">
-               
-              <li class="nav-item">
-                  <a class="nav-link active mx-2" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item mx-2">
-                  <a class="nav-link" href="Aboutus.html">About</a>
-                </li>
-                <li class="nav-item mx-2">
-                  <a class="nav-link" href="Contact.html">Contact</a>
-                </li>
-               
-              </ul>
-              <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                <!--Login/Signup-->
-                
-                
-                <a href="#"
-                   class="text-white text-decoration-none px-3 py-1 bg-primary rounded-4" id = "form-open"
 
-                   style="background-color:#FFFFFF";
+         <div id="header">
+         <div class="container">
+            <nav>
+             
+                <h1 class="text-white"> E-diary</h1>
                 
-                >Login</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      </div>
-    
-    
-      <!--Home-->
+                <ul id = "sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <button class ="login" id="form-open">Login</button>
+                    <i class="fas fa-times" onclick ="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick ="openmenu()"></i> 
+                
+            </nav>
+            <div class="header-text"></div>
+            <h1>"Let the Words Pour Out, Unfiltered and Unapologetic <br> Where Your Thoughts Run Wild and Uncensored!"</h1>
+         
+         
+            <!--Home-->
      <section class = "home">
        <div class = "form_container">
         <i class = "uil uil-times form_close"></i>
@@ -156,12 +116,13 @@ if (!empty($email) && !empty($password)) {
    </div> 
     
         <!--Signup form-->
-        <div class="form signup_form">
-  <form action="SignupLogin.php" method="post">
+     <div class="form signup_form">
+    <form action="SignupLogin.php" method="post">
     <h2>Signup</h2>
     <div class="input_box">
-      <input type="email" name="email-signup" placeholder="Enter your email" autofocus required />
+      <input type="email" name="email-signup" class="form-control checking_email" placeholder="Enter your email" autofocus required />
       <i class="uil uil-envelope-alt email"></i>
+      <small class ="error_email" style="color: red;"> </small>
     </div>
     
 
@@ -183,16 +144,41 @@ if (!empty($email) && !empty($password)) {
 
        <!--Scripts-->
      <script src ="New.js"></script>
+     <script src ="sidemenu.js"></script>
      
+         </div>
+   </div> 
 
-     <main>
-      <section class="headings">
-             <h1>Let the Words Pour Out, Unfiltered and <br>  Unapologetic: Where Your Thoughts <br>Run Wild and Uncensored!</h1>             
-      </section>
-    </main>
+
+     <!--ABOUT SECTION-->
+     <div id ="about">
+      <div class = "container">
+         <div class="row">
+          <div class="about-col-1">
+            <img src="ediary.png">
+          </div>
+          <div class="about-col-2">
+           <h1 class ="subtitle">About us</h1> 
+          <p>Welcome to E-diary W, a unique platform where the timeless art of journaling seamlessly merges 
+            with the digital age. Our mission is to create a haven for individuals seeking a safe and inspiring 
+            space to articulate their thoughts, emotions, and experiences through the transformative medium of electronic diaries. 
+            n a world that increasingly revolves around technology, E-diary W stands as a beacon, inviting users to explore the depths 
+            of self-reflection and personal expression within the comfort of a virtual environment. We understand the importance of 
+            fostering a sense of security, encouraging users to open up and share their innermost thoughts without fear of judgment. 
+            By harnessing the power of cutting-edge technology, we aim to redefine the traditional concept of journaling, providing a 
+            dynamic and interactive platform that empowers individuals on their journey of self-discovery. Whether documenting daily 
+            musings, capturing significant life events, or simply engaging in a therapeutic release, E-diary W is committed to being 
+            the digital companion that nurtures personal growth and introspection. Join us in this exciting fusion of tradition and 
+            innovation, where the possibilities for self-expression are limitless, and the electronic diary becomes a powerful tool for 
+            connection, understanding, and self-discovery.</p>
+          </div>
+         </div>
+      </div>
+     </div>
+
+               <!--Contact Section-->
+      <div class="Contact"></div>
+
 
 </body>
 </html>
-
-
-
