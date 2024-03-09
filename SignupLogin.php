@@ -46,6 +46,8 @@ if (!empty($email) && !empty($password)) {
 }
 }
 
+
+
 // ... existing code ...
 
 ?>
@@ -54,7 +56,7 @@ if (!empty($email) && !empty($password)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Diary</title>
+    <title>Diaryhea</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
    
@@ -75,20 +77,21 @@ if (!empty($email) && !empty($password)) {
          <div class="container">
             <nav>
              
-                <h1 class="text-white"> E-diary</h1>
+                <h1 class="text-white"> Diaryhea</h1>
                 
                 <ul id = "sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#Contact">Contact</a></li>
                     <button class ="login" id="form-open">Login</button>
                     <i class="fas fa-times" onclick ="closemenu()"></i>
                 </ul>
                 <i class="fas fa-bars" onclick ="openmenu()"></i> 
                 
             </nav>
-            <div class="header-text"></div>
-            <h1>"Let the Words Pour Out, Unfiltered and Unapologetic <br> Where Your Thoughts Run Wild and Uncensored!"</h1>
+            <div class="header-text">
+            <h1>  Let the Words Pour Out, Unfiltered and Unapologetic <br> Where Your Thoughts Run Wild and Uncensored!</h1>
+            </div>
+         
          
          
             <!--Home-->
@@ -155,19 +158,19 @@ if (!empty($email) && !empty($password)) {
       <div class = "container">
          <div class="row">
           <div class="about-col-1">
-            <img src="ediary.png">
+            <img src="Daily journal.png">
           </div>
-          <div class="about-col-2">
+          <div class="about-col-2"> 
            <h1 class ="subtitle">About us</h1> 
-          <p>Welcome to E-diary W, a unique platform where the timeless art of journaling seamlessly merges 
+          <p>Welcome to Diaryhea, a unique platform where the timeless art of journaling seamlessly merges 
             with the digital age. Our mission is to create a haven for individuals seeking a safe and inspiring 
             space to articulate their thoughts, emotions, and experiences through the transformative medium of electronic diaries. 
-            n a world that increasingly revolves around technology, E-diary W stands as a beacon, inviting users to explore the depths 
+            n a world that increasingly revolves around technology, Diaryhea stands as a beacon, inviting users to explore the depths 
             of self-reflection and personal expression within the comfort of a virtual environment. We understand the importance of 
             fostering a sense of security, encouraging users to open up and share their innermost thoughts without fear of judgment. 
             By harnessing the power of cutting-edge technology, we aim to redefine the traditional concept of journaling, providing a 
             dynamic and interactive platform that empowers individuals on their journey of self-discovery. Whether documenting daily 
-            musings, capturing significant life events, or simply engaging in a therapeutic release, E-diary W is committed to being 
+            musings, capturing significant life events, or simply engaging in a therapeutic release, Diaryhea is committed to being 
             the digital companion that nurtures personal growth and introspection. Join us in this exciting fusion of tradition and 
             innovation, where the possibilities for self-expression are limitless, and the electronic diary becomes a powerful tool for 
             connection, understanding, and self-discovery.</p>
@@ -176,9 +179,7 @@ if (!empty($email) && !empty($password)) {
       </div>
      </div>
 
-               <!--Contact Section-->
-      <div class="Contact"></div>
-
+             
 
 </body>
 </html>

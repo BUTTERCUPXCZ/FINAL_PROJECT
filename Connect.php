@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include("Database.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Password is correct
         // Perform login actions
 
-     
+       $_SESSION['email'] = $email;
         header("Location: index.php");
         echo "<script>alert('Login Successfully')</script>"; 
         exit();
