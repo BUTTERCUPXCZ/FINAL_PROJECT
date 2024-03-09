@@ -46,3 +46,9 @@ ul li:hover a{
 .sidebar ul a i{
   margin-right: 16px;
 }
+.sidebar p{
+  color: gray;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 270px;
+}

@@ -17,7 +17,9 @@
       <li id=""><a href="entries.php"><i class="fas fa-archive"></i>Entries</a></li>
       <li><a href="Calendar.php"><i class="fas fa-calendar-week">Calendar</i></a></li>
       <li  class="logout logout-bottom"><a href="Logout.php" class="logout"><i class="fas fa-sign-out-alt">Logout</i></a></li>
+     <p class="Copyright">Copyright Diaryhea 2024 <br> "All rights reserved"</p>
     </ul>
+
    
   </div>
  

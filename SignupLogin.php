@@ -158,7 +158,7 @@ if (!empty($email) && !empty($password)) {
       <div class = "container">
          <div class="row">
           <div class="about-col-1">
-            <img src="Daily journal.png">
+            <img src="Image/Daily journal.png">
           </div>
           <div class="about-col-2"> 
            <h1 class ="subtitle">About us</h1> 
