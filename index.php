@@ -13,12 +13,12 @@
     <header>Menu</header>
     <ul>
       <li><a href="index.php"><i class="fas fa-home"></i>Home</a></li>
-      <li><a href="entry.php"><i class="fas fa-edit"></i>Write Entry</a></li>
+      <li><a href="entry.php"><i class="fas fa-edit"></i>Write Entry</a></li>  
       <li id=""><a href="entries.php"><i class="fas fa-archive"></i>Entries</a></li>
       <li><a href="Calendar.php"><i class="fas fa-calendar-week">Calendar</i></a></li>
       <li  class="logout logout-bottom"><a href="Logout.php" class="logout"><i class="fas fa-sign-out-alt">Logout</i></a></li>
     </ul>
-  
+   
   </div>
  
 </body>

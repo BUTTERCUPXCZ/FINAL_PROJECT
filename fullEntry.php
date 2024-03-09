@@ -47,6 +47,7 @@ if (isset($_POST['delete'])) {
     $dateRef = $_POST['time'];
     $edit = "DELETE FROM entries WHERE Time = '$dateRef'";
     $conn->query($edit);
+    echo"<script>alert('You sure you want to Delete?')</script>";
     header("Location: entries.php");
       exit;
   }
