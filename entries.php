@@ -47,19 +47,28 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $truncatedEntry = substr($row["entries"], 0, 500);
         echo '<div class="entry">
-                <button>
+        <form action="fullEntry.php" method="post">
+                <button value="'.$row["Title"].'">
+                <input type="hidden" name="title" value="'.$row["Title"].'">
                     <textarea readonly name="title" id="title" cols="30" rows="10">' . $row["Title"] . '</textarea>
                     <textarea readonly name="date" id="date" cols="30" rows="10">' . $row["Time"] . '</textarea>
-                    <textarea readonly name="entry" id="entry" cols="30" rows="10">' . $truncatedEntry . ' </textarea>';
+                    <textarea readonly name="entry" id="entry" cols="30" rows="10">' . $truncatedEntry . ' </textarea>
+
+                    ';
+                    
     
-        // Display the image if available
-        if (!empty($row["imagePath"])) {
-            echo '<div class="imageDisplay" id="imageDisplay">
-                    <img src="' . $row["imagePath"] . '" alt="' . $row["imageName"] . '">
-                  </div>';
-        }
+                    // Display the image if available
+                     if (!empty($row["imagePath"])) {
+                        echo '<div class="imageDisplay" id="imageDisplay">
+                            <img src="' . $row["imagePath"] . '" alt="' . $row["imageName"] . '">
+                             </div>
+                             ';
+                     }
     
-        echo '</button></div>';
+        echo '
+                </button>
+        </form>
+        </div>';
     }
     
     // Close the HTML structure
