@@ -23,6 +23,17 @@
     <title>Calendar with Events</title>
   </head>
   <body>
+  <div class="sidebar">
+    <header>Menu</header>
+    <ul>
+      <li><a href="index.php"><i class="fas fa-home"></i>Home</a></li>
+      <li><a href="entry.php"><i class="fas fa-edit"></i>Write Entry</a></li>
+      <li id=""><a href="entries.php"><i class="fas fa-archive"></i>Entries</a></li>
+      <li><a href="Calendar.php"><i class="fas fa-calendar-week">Calendar</i></a></li>
+      
+    </ul>
+
+  </div>
     <div class="container">
       <div class="left">
         <div class="calendar">
